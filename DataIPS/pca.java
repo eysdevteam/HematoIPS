@@ -201,13 +201,12 @@ fs.rename(new Path("/var/www/html/DashBoardIPS/web/scatter/"+file), new Path("/v
 //Export data backup
 	
 	//Rad file name
-	val lines = scala.io.Source.fromFile("/home/centos/DataIPS/date", "utf-8").getLines.mkString
-	val x = lines.replace(":","-")
+val date = java.time.LocalDateTime.now.toString.replace(".","").replace(":","")
 
-df21.orderBy("avg(distance)").coalesce(1).write.mode("overwrite").json("/home/centos/DataIPS/backup/"++x)
+df21.orderBy("avg(distance)").coalesce(1).write.mode("overwrite").json("/home/centos/DataIPS/backup/")
 val fs = FileSystem.get(sc.hadoopConfiguration);
-val file = fs.globStatus(new Path("/home/centos/DataIPS/backup/"++x++"/part*"))(0).getPath().getName();
-fs.rename(new Path("/home/centos/DataIPS/backup/"++x++"/"+file), new Path("/home/centos/DataIPS/backup/"++x++"/"+"data.json"));
+val file = fs.globStatus(new Path("/home/centos/DataIPS/backup/part*"))(0).getPath().getName();
+fs.rename(new Path("/home/centos/DataIPS/backup/"+file), new Path("/home/centos/DataIPS/backup/"+date"data.json"));
 
 
 //Export data tables
