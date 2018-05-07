@@ -1,7 +1,0 @@
-v17,Nombre de la neoplasia cáncer o tumor maligna reportada
-v19,Fecha nota remisión médico o institución general hacia la institución que hizo el Dx
-v20,Fecha ingreso a la institución que realizo el Dx luego de la remisión
-v23,Fecha de recolección muestra estudio histopatológico
-v24,Fecha informe histopatológico valido
-v26,Fecha primera consulta médico tratante enfermedad maligna
-v29,Si es tumor salido cual fue la primera estatificación basada en TNM FIGO u otras compatibles con esta numeración según tumor
