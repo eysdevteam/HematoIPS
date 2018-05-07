@@ -1,0 +1,9 @@
+[ 
+{"var":"v17","name":"Nombre de la neoplasia cáncer o tumor maligna reportada"},
+{"var":"v19","name":"Fecha nota remisión médico o institución general hacia la institución que hizo el Dx"},
+{"var":"v20","name":"Fecha ingreso a la institución que realizo el Dx luego de la remisión"},
+{"var":"v23","name":"Fecha de recolección muestra estudio histopatológico"},
+{"var":"v24","name":"Fecha informe histopatológico valido"},
+{"var":"v26","name":"Fecha primera consulta médico tratante enfermedad maligna"},
+{"var":"v29","name":"Si es tumor salido cual fue la primera estatificación basada en TNM FIGO u otras compatibles con esta numeración según tumor"}
+]

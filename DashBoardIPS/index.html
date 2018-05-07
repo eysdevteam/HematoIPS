@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="galatea">
+        <head>
+	  <title>Tratamiento de c&#225ncer por quimioterapia</title>
+          <meta charset="utf-8">
+          <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+          <!-- Import CSS Style -->
+          <link rel="stylesheet" type="text/css" href="css/style.css">
+          <link rel="stylesheet" type="text/css" href="css/lib.styles.css">  
+          <!-- Import D3.js -->
+          <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+          <!-- Import Bootstrap -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+          <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+          <!-- Import AngularJS -->
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+          <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+          <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->  
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
+          <!-- Import JQuery -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <!-- Import AngularJS Module -->
+          <script src="js/app.js"></script>
+          <script src="js/directives.js"></script>
+          <!-- Import AngularJS Controllers -->
+          <script src="js/controllers.js"></script>
+          <!-- Import D3.js Library -->
+          <script src="js/lib.d3.js"></script>
+          <!-- Import AngularJS module for eys -->
+          <script src="js/eys.module.min.js"></script>
+          <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>-->
+          <!-- Import NVD3 AngularJS Library -->
+          <script>document.write('<base href="' + document.location + '" />');</script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/> 
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.5/angular-nvd3.min.js"></script>
+           <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+          
+          <!-- Colores cromáticos de D3.js -->
+          <script src="https://d3js.org/d3-color.v1.min.js"></script>
+          <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+          <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        </head>
+    <body>
+          <header>
+          </header>
+          <main class="main1">
+                  <div class="container-fluid  no-gutters">
+                      <div class="row borderright">
+                          <div class="col-md-5 borde">
+                                <div class="row borderright">
+                                      <div class="col-md-11 bordint1">
+                                          <mejores-peores></mejores-peores>
+                                      </div>
+                                </div>
+                                <div class="row borderright">
+                                    <div class="col-md-11 bordint1 main1">
+                                        <top-table></top-table>
+                                    </div>
+                                </div>
+                          </div>
+                          <div class="col-md-7 bordint1" id="recopilacion">
+                              <scatter></scatter>
+                          </div>
+                      </div>
+                      <div class="row borderright">
+                          <div class="col-md-12  bordint1 no-gutters">
+                            <bars></bars>
+                          </div>
+                      </div>
+                  </div>
+    </main>
+          </main>
+          <script type="text/javascript">
+              setTimeout('document.location.reload()',60000);
+	      setTimeout(function() { $('#myModal12').modal('show'); }, 1000);
+              setTimeout(function() { $('#myModalLabel12').modal('show'); }, 1000);
+              setTimeout(function() { $('#myModal12').modal('hide'); }, 3000);
+              setTimeout(function() { $('#myModalLabel12').modal('hide'); }, 3000);
+          </script>
+    </body>
+</html>

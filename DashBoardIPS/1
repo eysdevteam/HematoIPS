@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+    <!-- Import CSS Style -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/lib.styles.css">  
+    <!-- Import D3.js -->
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <!-- Import Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <!-- Import AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
+    <!-- Import JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Import AngularJS Module -->
+    <script src="js/app.js"></script>
+    <!-- Import AngularJS Controllers -->
+    <script src="js/controllers.js"></script>
+    <!-- Import D3.js Library -->
+    <script src="js/lib.d3.js"></script>
+    <!-- Import AngularJS module for eys -->
+    <script src="js/eys.module.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <!-- Import NVD3 AngularJS Library -->
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.5/angular-nvd3.min.js"></script>
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    
+    <!-- Colores crom�ticos de D3.js -->
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  </head>
+  <body ng-app="galatea">
+    <header>
+    </header>
+    <main class="main1">
+      <div class="container-fluid  no-gutters">
+        <div class="row">
+          <div class="col-md-5 borde">
+            <div class="row">
+              <div class="col-md-11 bordint1">
+                <table class="table">
+                  <tr>
+                    <td class="col-md-11" id="uni">
+                      <div class="titlesal">
+                        <text class="titulo">Mejores vs peores IPS rankeadas</text>
+                      </div>
+                    </td>
+                    <td class="col-md-1" id="uni">
+                      <span>           
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong2">
+                          <a class="tooltips1" href="#">   
+                            <b class="fa fa-info-circle info" aria-hidden="true"></b>   
+                            <span>Información</span>
+                          </a>                      
+                        </button>  
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle2" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle1">Ips por grupo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+  			                       Muestra la cantidad de miembros existentes en el mejor y/o peor grupo del conjunto total de IPS analizadas.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+                <!--Group IPS-->
+                <table class="center contdat">
+                    <tr>
+                      <td class="col-1">
+                        <a class="tooltips" href="#">
+                          <div ng-controller="Mejoraron" id="IPSmejoraron">
+                            <span>Miembros de grupo con mejor calidad de datos sobre el total analizado</span>
+                          </div>
+                        </a>
+                      </td>
+                      <td class="col-6">
+                       <a class="tooltips" href="#">
+                          <div ng-controller="Empeoraron" id="IPSempeoraron">
+                            <span>Miembros de grupo con peor calidad de datos sobre el total analizado</span>
+                          </div>
+                        </a>                                
+                      </td>  
+                    </tr>
+                  </table>
+              </div>
+            </div>
+          <div class="row">
+            <!--top table IPS-->
+            <div class="col-md-11 bordint1 main1">
+              <table class="table">
+                <tr>
+                  <td class="col-md-9" id="uni">
+                    <div class="titlesal uni">
+                      <text class="titulos"></text>
+                    </div> 
+                  </td>
+                  <td class="col-md-1" id="uni">
+                    <span>
+                     <ul class="navbar-nav mr-auto ">
+                        <li class="nav-item dropdown">
+                          <b class="nav-link tamaño info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<a class="tooltips1 fa fa-ellipsis-v info" id="color" href="#">
+                                  <span>Ver más</span>
+                              </a>
+
+			  </b>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item badbutton" href="#">Mejores IPS</a>
+                            <a class="dropdown-item goodbutton" href="#">Peores IPS</a>
+                          </div>
+                        </li>
+                     </ul>
+                    </span>
+                  </td>
+                  <td class="col-md-1" id="uni">               
+                    <span>           
+                      <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong3">
+                        <a class="tooltips1" href="#">  
+                          <b class="fa fa-info-circle info" aria-hidden="true"></b>   
+                          <span>Información</span>
+                        </a>                      
+                      </button>           
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle3" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle1">Top - Mejores/Deficientes IPS </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+			                       Detalle  de las IPS que se encuentran en el mejor y/o peor grupo del total analizado.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                  </td>
+                </tr>
+              </table>              
+              <table class="center table table-striped table-light tablaips"><thead></thead></table>                  
+            </div>
+          </div>
+        </div>
+          <!-- Scatter plot IPS-->
+        <div class="col-md-7 bordint1" id="recopilacion">
+          <table class="table">
+              <tr>
+                <td class="col-md-10" id="uni">      
+                  <div class="titlesal">
+                    <text class="titulo">Agrupación de IPS según su rendimiento</text>
+                  </div>
+                </td>
+                <td class="col-md-1" id="uni">        
+                  <!-- Button trigger modal -->
+                  <span>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong">
+                      <a class="tooltips1" href="#">
+                        <b class="fa fa-info-circle info" aria-hidden="true"></b>   
+                        <span>Información</span>
+                      </a>                      
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Recopilación IPS
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Representación general de las IPS de acuerdo a su desempeño en conformidad de datos en patologias de alto costo (Cancer).
+                          </div>        
+                          <!-- HTML -->   
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </td>
+              </tr>
+            </table>
+              <div class="contdat" ng-controller="scatter" id="scatter"> 
+              </div> 
+        </div>
+        </div>
+      <div class="row">
+        <!--Candles graph IPS-->
+        <div class="col-md-12  bordint1 no-gutters">
+          <table class="table">
+            <tr>
+              <td class="col-md-10" id="uni">
+                <div class="titlesal">
+                  <text class="titulo">Variables trazadoras</text>
+                </div>
+                <!-- Button trigger modal -->
+              </td>
+              <td class="col-md-1" id="uni">
+                <span>           
+                  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong7">
+                    <a class="tooltips1" href="#">               
+                      <b class="fa fa-table  info" aria-hidden="true"></b>   
+                      <span>Convenciones</span>
+                    </a>                      
+                  </button> 
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalLong7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle7" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle7">Variables analizadas</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+		                      <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#Variable</th>
+                                <th scope="col">Nombre</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">17</th>
+                                <td>Nombre de la neoplasia cancer o tumor maligno reportada</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">19</th>
+                                <td>Fecha nota remisión médico o institución general hacia la institución que hizo el Dx</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">20</th>
+                                <td>Fecha ingreso a la institucion que realizo el Dx luego de la remision</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">23</th>
+                                <td>Fecha de recoleccion muestra estudio histopatologico</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">24</th>
+                                <td>Fecha informe histopatologico valido</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">27</th>
+                                <td>Fecha primera consulta medico tratante enfermedad maligna</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">29</th>
+                                <td>Si es tumor solido cual fue la primera estadificacion basada en TNM FIGO u otras compatibles </td>
+                              </tr>
+                            </tbody>
+                          </table>
+		                    </div>
+		                  </div>
+                    </div>
+                  </div>
+                </span>
+              </td>
+	            <td class="col-md-1" id="uni"> 
+               <span>
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong1">
+                  <a class="tooltips1" href="#">
+                    <b class="fa fa-info-circle info" aria-hidden="true"></b>
+                    <span>Información</span>
+                  </a>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle1">Variables trazadoras</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div class="modal-body">
+                      Representación del comportamiento de las variables trazadoras usadas en el informe de calidad de datos. En cada variable se observa lo siguiente
+                    <div>
+                      <img src ="candles.png"></img></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </td>
+        </tr>
+      </table>
+            <div class="contdat" ng-controller="candles">
+              <nvd3 options="options" data="data"></nvd3>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </main>
+  <script type="text/javascript">
+    tabla();
+  setTimeout('document.location.reload()',60000);
+  </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+/* Todas los estilos dentro de este archivo son exclusivos
+de la librería de gráficos */
+
+.tick line {
+ 	display: none;
+} 
+
+/*.tooltip {
+	position: absolute;
+}*/

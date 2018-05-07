@@ -1,0 +1,58 @@
+  <!--Candles graph IPS-->
+<table class="table">
+            <tr>
+              <td class="col-md-10" id="uni">
+                <div class="titlesal">
+                  <text class="titulo">Comparación de variables trazadoras por el total de IPS analizadas</text>
+                </div>
+                <!-- Button trigger modal -->
+    </td>
+                <td class="col-md-1" id="uni"> 
+    <span>
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong1">
+                  <a class="tooltips1" href="#">
+                    <b class="fa fa-info-circle info" aria-hidden="true"></b>
+                    <span>Información</span>
+                  </a>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle1" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle1">Variables trazadoras</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div class="modal-body">
+                      Representación del comportamiento de las variables trazadoras usadas en el informe de calidad de datos para tratamiento de cáncer con quimioterapia.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <div class="row">  
+              <div class="col-md-7 contenedor" id="contenedor">
+                    <div ng-controller="bargraph">
+                        <div class="svg" id="svg"></div> 
+                        </div>
+              </div>
+              <div class="col-md-5">
+               <div class="col-md-auto">
+                <div class="card borde">
+                  <div class="card-body pad0">
+                    <b class="card-title margin"></b>
+                      <small>                  
+                        <div ng-controller="TablaVar">
+                            <table class=" table table-responsive text-lowercase tablavar margin" id="tablavar"></table>
+                        </div>
+                      </small>
+                    </div>
+                  </div>
+                </div>
+            </div>
+    </div>

@@ -1,0 +1,58 @@
+<!--top table IPS-->
+<div ng-controller="TopIPS">
+        <table class="table margin">
+            <tbody>
+                <tr>
+                    <td class="col-md-9" id="uni">
+                        <div class="titlesal uni">
+                          <text class="titulos"></text>
+                        </div> 
+                    </td>
+                    <td class="col-md-1" id="uni">
+                        <span>
+                            <ul class="navbar-nav mr-auto ">
+                              <li class="nav-item dropdown">
+                                <b class="nav-link tamano info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"    aria-haspopup="true" aria-expanded="false">
+                                    <a class="tooltips1 fa fa-ellipsis-v info" id="color" href="#">
+                                        <span>Ver más</span>
+                                    </a>
+    			                       </b>
+    			                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item badbutton" href="#">Mejores IPS</a>
+                                    <a class="dropdown-item goodbutton" href="#">Peores IPS</a>
+                                  </div>
+                              </li>
+                            </ul>
+                        </span>
+                    </td>
+                    <td class="col-md-1" id="uni">               
+                      <span>           
+                          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalLong3">
+                              <a class="tooltips1" href="#">  
+                                <b class="fa fa-info-circle info" aria-hidden="true"></b>   
+                                <span>Información</span>
+                              </a>                      
+                          </button>           
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="  exampleModalLongTitle3" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle1">Top - Mejores/Deficientes IPS </h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+    			                            Detalle  de las IPS que se encuentran en el mejor y/o peor grupo del total analizado en el informe de calidad de datos para tratamiento de cáncer con quimioterapia.
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>              
+        <table class="center table table-striped table-light tablaips text-capitalize margin" id="tablaips"></table>
+</div>
